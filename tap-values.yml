@@ -19,6 +19,7 @@ ootb_supply_chain_basic:
 
 learningcenter:
   ingressDomain: "learningcenter.tap.poclab.me"
+  ingressClass: contour
 
 tap_gui:
   service_type: ClusterIP
