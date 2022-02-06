@@ -1,0 +1,37 @@
+profile: light
+ceip_policy_disclosed: true # Installation fails if this is set to 'false'
+
+buildservice:
+  kp_default_repository: "powellcrack/build-service"
+  kp_default_repository_username: "powellcrack"
+  kp_default_repository_password: "Qh#!3#ocuYDlq0th"
+  tanzunet_username: "xinstevenl@vmware.com"
+  tanzunet_password: "$Dr34mJ0b$"
+
+supply_chain: basic
+
+ootb_supply_chain_basic:
+  registry:
+    server: "index.docker.io"
+    repository: "powellcrack"
+  gitops:
+    ssh_secret: ""
+
+tap_gui:
+  service_type: ClusterIP
+  ingressEnabled: "true"
+  ingressDomain: "tap.poclab.me"
+  app_config:
+    app:
+      baseUrl: http://tap-gui.tap.poclab.me
+    catalog:
+      locations:
+        - type: url
+          target: https://GIT-CATALOG-URL/catalog-info.yaml
+    backend:
+      baseUrl: http://tap-gui.tap.poclab.me
+      cors:
+        origin: http://tap-gui.tap.poclab.me
+
+metadata_store:
+  app_service_type: LoadBalancer # (optional) Defaults to LoadBalancer. Change to NodePort for distributions that don't support LoadBalancer
