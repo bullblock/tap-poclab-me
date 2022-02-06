@@ -2,41 +2,43 @@ profile: light
 ceip_policy_disclosed: true 
 
 buildservice:
-kp_default_repository: "$DOCKER_HUB_USERNAME/build-service"
-kp_default_repository_username: "$DOCKER_HUB_USERNAME"
-kp_default_repository_password: "$DOCKER_HUB_PASSWORD"
-tanzunet_username: "$INSTALL_REGISTRY_USERNAME"
-tanzunet_password: "$INSTALL_REGISTRY_PASSWORD"
+  kp_default_repository: "$DOCKER_HUB_USERNAME/build-service"
+  kp_default_repository_username: "$DOCKER_HUB_USERNAME"
+  kp_default_repository_password: "$DOCKER_HUB_PASSWORD"
+  tanzunet_username: "$INSTALL_REGISTRY_USERNAME"
+  tanzunet_password: "$INSTALL_REGISTRY_PASSWORD"
 
 supply_chain: basic
 
 ootb_supply_chain_basic:
-registry:
+  registry:
     server: "index.docker.io"
     repository: "$DOCKER_HUB_USERNAME"
-gitops:
+  gitops:
     ssh_secret: ""
+
 tap_gui:
-service_type: ClusterIP
-ingressEnabled: "true"
-ingressDomain: "$CUSTOM_DOMAIN"
-app_config:
+  service_type: ClusterIP
+  ingressEnabled: "true"
+  ingressDomain: "$CUSTOM_DOMAIN"
+  app_config:
     app:
-    baseUrl: http://tap-gui.$CUSTOM_DOMAIN
+      baseUrl: http://tap-gui.$CUSTOM_DOMAIN
     catalog:
-    locations:
+      locations:
         - type: url
           target: https://raw.githubusercontent.com/bullblock/tap-poclab-me/master/catalog-info.yaml
     backend:
-    baseUrl: http://tap-gui.$CUSTOM_DOMAIN
-    cors:
+      baseUrl: http://tap-gui.$CUSTOM_DOMAIN
+      cors:
         origin: http://tap-gui.$CUSTOM_DOMAIN
 cnrs:
     domain_name: $CUSTOM_DOMAIN
 
 contour:
-envoy:
+  infrastructure_provider: aws
+  envoy:
     service:
-    type: LoadBalancer
-infrastructure_provider: aws
+      aws:
+        LBType: nlb
 
