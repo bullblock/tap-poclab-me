@@ -1,5 +1,5 @@
 profile: light
-ceip_policy_disclosed: true # Installation fails if this is set to 'false'
+ceip_policy_disclosed: true 
  
 buildservice:
   kp_default_repository: "dev.registry.tanzu.vmware.com/sliang/build-service"
@@ -17,10 +17,6 @@ ootb_supply_chain_basic:
   gitops:
     ssh_secret: ""
  
-learningcenter:
-  ingressDomain: "learningcenter.tap.poclab.me"
-  ingressClass: contour
- 
 tap_gui:
   service_type: ClusterIP
   ingressEnabled: "true"
@@ -31,14 +27,14 @@ tap_gui:
     catalog:
       locations:
         - type: url
-          target: https://raw.githubusercontent.com/bullblock/tap-poclab-me/master/tap-values.yml 
+          target: https://raw.githubusercontent.com/bullblock/tap-poclab-me/master/catalog-info.yaml
     backend:
       baseUrl: http://tap-gui.tap.poclab.me
       cors:
         origin: http://tap-gui.tap.poclab.me
  
 metadata_store:
-  app_service_type: LoadBalancer # (optional) Defaults to LoadBalancer. Change to NodePort for distributions that don't support LoadBalancer
+  app_service_type: LoadBalancer 
  
 contour:
   infrastructure_provider: aws
@@ -46,16 +42,3 @@ contour:
     service:
       aws:
         LBType: nlb
- 
-grype:
-  namespace: "default" # (optional) Defaults to default namespace.
-  targetImagePullSecret: "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"
- 
-# e.g. CNRs specific values go under its name
-cnrs:
-  provider: local
- 
-# e.g. App Accelerator specific values go under its name
-accelerator:
-  server:
-service_type: "ClusterIP"
