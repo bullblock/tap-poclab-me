@@ -2,38 +2,38 @@ profile: light
 ceip_policy_disclosed: true 
 
 buildservice:
-  kp_default_repository: "$DOCKER_HUB_USERNAME/build-service"
-  kp_default_repository_username: "$DOCKER_HUB_USERNAME"
-  kp_default_repository_password: "$DOCKER_HUB_PASSWORD"
-  tanzunet_username: "$INSTALL_REGISTRY_USERNAME"
-  tanzunet_password: "$INSTALL_REGISTRY_PASSWORD"
+  kp_default_repository: "dev.registry.tanzu.vmware.com/sliang/build-service"
+  kp_default_repository_username: "xinstevenl@vmware.com"
+  kp_default_repository_password: '$Dr34mJ0b$'
+  tanzunet_username: "xinstevenl@vmware.com"
+  tanzunet_password: '$Dr34mJ0b$'
 
 supply_chain: basic
 
 ootb_supply_chain_basic:
   registry:
-    server: "index.docker.io"
-    repository: "$DOCKER_HUB_USERNAME"
+    server: "dev.registry.tanzu.vmware.com"
+    repository: "sliang/supply-chain"
   gitops:
     ssh_secret: ""
 
 tap_gui:
   service_type: ClusterIP
   ingressEnabled: "true"
-  ingressDomain: "$CUSTOM_DOMAIN"
+  ingressDomain: "tap.poclab.me"
   app_config:
     app:
-      baseUrl: http://tap-gui.$CUSTOM_DOMAIN
+      baseUrl: http://tap-gui.tap.poclab.me
     catalog:
       locations:
         - type: url
           target: https://raw.githubusercontent.com/bullblock/tap-poclab-me/master/catalog-info.yaml
     backend:
-      baseUrl: http://tap-gui.$CUSTOM_DOMAIN
+      baseUrl: http://tap-gui.tap.poclab.me
       cors:
-        origin: http://tap-gui.$CUSTOM_DOMAIN
+        origin: http://tap-gui.tap.poclab.me
 cnrs:
-    domain_name: $CUSTOM_DOMAIN
+    domain_name: tap.poclab.me
 
 contour:
   infrastructure_provider: aws
