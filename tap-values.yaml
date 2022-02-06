@@ -44,7 +44,7 @@ contour:
         LBType: nlb
 
 grype:
-  namespace: "default"
+  namespace: "tap-install"
   targetImagePullSecret: "tap-registry"
 
 cnrs:
