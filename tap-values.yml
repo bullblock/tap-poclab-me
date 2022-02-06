@@ -26,7 +26,7 @@ app_config:
     catalog:
     locations:
         - type: url
-        target: https://raw.githubusercontent.com/bullblock/tap-poclab-me/master/catalog-info.yaml
+          target: https://raw.githubusercontent.com/bullblock/tap-poclab-me/master/catalog-info.yaml
     backend:
     baseUrl: http://tap-gui.$CUSTOM_DOMAIN
     cors:
