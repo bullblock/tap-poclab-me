@@ -36,3 +36,7 @@ tap_gui:
 metadata_store:
   app_service_type: LoadBalancer 
 
+contour:
+  envoy:
+    service:
+      type: LoadBalancer
