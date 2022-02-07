@@ -45,7 +45,7 @@ contour:
 
 grype:
   namespace: "default"
-  targetImagePullSecret: "tap-registry"
+  targetImagePullSecret: "rw-registry"
 
 cnrs:
   provider: local
