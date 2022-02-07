@@ -44,8 +44,8 @@ contour:
         LBType: nlb
 
 grype:
-  namespace: "tap-install"
-  targetImagePullSecret: "tap-registry"
+  namespace: "default"
+  targetImagePullSecret: "docker-registry"
 
 cnrs:
   provider: local
