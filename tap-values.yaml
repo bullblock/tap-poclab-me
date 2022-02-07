@@ -2,9 +2,9 @@ profile: light
 ceip_policy_disclosed: true # Installation fails if this is set to 'false'
 
 buildservice:
-  kp_default_repository: "powellcrack/build-service"
-  kp_default_repository_username: "powellcrack"
-  kp_default_repository_password: "Qh#!3#ocuYDlq0th"
+  kp_default_repository: "dev.registry.tanzu.vmware.com/sliang/build-service"
+  kp_default_repository_username: "xinstevenl@vmware.com"
+  kp_default_repository_password: '$Dr34mJ0b$'
   tanzunet_username: "xinstevenl@vmware.com"
   tanzunet_password: "$Dr34mJ0b$"
 
@@ -12,8 +12,8 @@ supply_chain: basic
 
 ootb_supply_chain_basic:
   registry:
-    server: "index.docker.io"
-    repository: "powellcrack"
+    server: "dev.registry.tanzu.vmware.com"
+    repository: "sliang/supply-chain"
   gitops:
     ssh_secret: ""
 
@@ -45,7 +45,7 @@ contour:
 
 grype:
   namespace: "default"
-  targetImagePullSecret: "docker-registry"
+  targetImagePullSecret: "tap-registry"
 
 cnrs:
   provider: local
