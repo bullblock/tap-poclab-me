@@ -40,3 +40,6 @@ contour:
   envoy:
     service:
       type: LoadBalancer
+
+cnrs:
+  domain_name: tap.poclab.me
